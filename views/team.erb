@@ -5,10 +5,11 @@
   <title>Basketball Team</title>
  </head>
  <body>
- 
 
+   <h1>Team Name: <%=params[:teamname]%></h1>
+   <% params.each do |k,v| %>
+   <h2><%= "Team Name: #{v}" %></h2>
+   <%end%>
 
  </body>
 </html>
-
-
