@@ -5,6 +5,28 @@
   <title>Basketball Team</title>
  </head>
  <body>
+        <h1>Team Name: <%= @params[:name] %> </h1>
+        <% @params.each do |key, value| %>
+            <% if key != "name" %>
+                <% case key
+                    when "pg"
+                        key = "point guard"
+                    when "sg"
+                        key = "shooting guard"
+                    when "sf"
+                        key = "small forward"
+                    when "pf"
+                        key = "power forward"
+                    when "c"
+                        key = "center"
+                %>
+                    
+                <% end %>
+                <h2><%= key.split.map(&:capitalize).join(' ') %>: <%= value.split.map(&:capitalize).join(' ') %></h2>
+
+            <% end %>
+
+        <% end%>
  
 
 
